@@ -1,0 +1,142 @@
+/* =========================================================
+   Yêu cầu 3: Skip link ẩn/hiện bằng position và :focus
+   ========================================================= */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 10px;
+  background: #000000;
+  color: #ffffff;
+  padding: 10px 15px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* =========================================================
+   Yêu cầu 4 & 7: Thanh điều hướng Flexbox (> 3 thuộc tính CSS)
+   ========================================================= */
+header nav {
+  display: flex;                /* 1. Flexbox */
+  justify-content: space-between;/* 2. Căn đều */
+  align-items: center;          /* 3. Căn giữa dọc */
+  background-color: #2e7d32;    /* 4. Màu nền */
+  padding: 15px 25px;           /* 5. Khoảng đệm */
+  border-radius: 8px;           /* 6. Bo góc */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #a5d6a7;
+}
+
+nav img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+/* =========================================================
+   Yêu cầu 5 & 8: Mô hình hộp (border, padding, border-radius) + :hover
+   ========================================================= */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 3px solid #81c784;     /* Đường viền */
+  padding: 5px;                  /* Đệm */
+  border-radius: 12px;           /* Bán kính viền */
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Yêu cầu 8: Hiệu ứng phóng to khi di chuột */
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================
+   Yêu cầu 6: Bố cục Grid 2 cột
+   ========================================================= */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.grid-item {
+  background: #f1f8e9;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* =========================================================
+   Yêu cầu 7: Bố cục Flexbox
+   ========================================================= */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.flex-item {
+  flex: 1 1 40%;
+  background: #f1f8e9;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* =========================================================
+   Yêu cầu 9: Bộ chọn nth-child tạo kiểu bo góc chẵn / lẻ
+   ========================================================= */
+/* Ảnh vị trí lẻ (1, 3, 5...) */
+.nth-gallery img:nth-child(odd) {
+  border-radius: 35px 0px 35px 0px;
+  border-color: #2e7d32;
+}
+
+/* Ảnh vị trí chẵn (2, 4...) */
+.nth-gallery img:nth-child(even) {
+  border-radius: 0px 35px 0px 35px;
+  border-color: #4caf50;
+}
+
+.nth-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.nth-gallery img {
+  width: 280px;
+  height: 200px;
+  object-fit: cover;
+}
